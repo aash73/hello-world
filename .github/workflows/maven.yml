@@ -31,12 +31,12 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Package workflow data as artifacts
-      run: mkdir staging && cp release/*.jar staging
+      run: mkdir staging/release1 && cp release/*.jar staging/release1
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: MyPackage
-        path: staging
+        path: staging/release1
         retention-days: 1
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
