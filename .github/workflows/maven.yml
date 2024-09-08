@@ -31,7 +31,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Package workflow data as artifacts
-      run: mkdir staging && cp target/*.jar staging
+      run: mkdir staging && cp release/*.jar staging
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
       with:
